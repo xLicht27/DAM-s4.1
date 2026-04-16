@@ -6,17 +6,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int a, b, c;
+        double a, b, c;
         double discriminante, x1, x2;
 
-        System.out.println("ingresa a: ");
-        a = sc.nextInt();
+        System.out.print("ingresa a: ");
+        a = sc.nextDouble();
 
-        System.out.println("ingresa b: ");
-        b = sc.nextInt();
+        System.out.print("ingresa b: ");
+        b = sc.nextDouble();
 
-        System.out.println("ingresa c: ");
-        c = sc.nextInt();
+        System.out.print("ingresa c: ");
+        c = sc.nextDouble();
 
         if (a == 0) {
             System.out.println(" No es una ecuacion de segundo grado porque no se puede ser 0.");
