@@ -7,7 +7,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int a, b, c;
-        double x1, x2;
+        double discriminante, x1, x2;
 
         System.out.println("ingresa a: ");
         a = sc.nextInt();
@@ -18,12 +18,26 @@ public class Main {
         System.out.println("ingresa c: ");
         c = sc.nextInt();
 
-        x1 = (-b + Math.sqrt((b * b) - (4 * a * c))) / (2 * a);
-        x2 = (-b + Math.sqrt((b * b) - (4 * a * c))) / (2 * a);
+        if (a == 0) {
+            System.out.println(" No es una ecuacion de segundo grado porque no se puede ser 0.");
+            return;
+        }
+        discriminante = (b * b) - (4 * a * c);
 
-        System.out.println("Raiz 1: " + x1);
-        System.out.println("Raiz 1: " + x2);
+        if (discriminante > 0) {
+            x1 = (-b + Math.sqrt(discriminante)) / (2.0 * a);
+            x2 = (-b - Math.sqrt(discriminante)) / (2.0 * a);
 
-        sc.close();
+            System.out.println("Dos raices reales diferentes: ");
+            System.out.println("Raiz 1: " + x1);
+            System.out.println("Raiz 2: " + x2);
+        } else if (discriminante == 0) {
+            x1 = (-b) / (2.0 * a);
+
+            System.out.println("Una raiz real doble:");
+            System.out.println("Raiz: " + x1);
+        } else {
+            System.out.println("No existen raices reales.");
+        }
     }
 }
